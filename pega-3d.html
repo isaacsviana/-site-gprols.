@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9b9b9">
+  <link rel="icon" href="imagens/favicon.png" type="image/png">
+  <title>RA e modelo 3D - Aleitamento materno</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/conteudo.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-pagina="pega-3d" data-secao="inicio">
+  <header class="topo">
+    <a class="botao-icone" href="pega.html" aria-label="Voltar" data-icone="voltar"></a>
+    <h1>RA / Modelo 3D</h1>
+  </header>
+  <main class="conteudo largo">
+    <div class="duas-colunas">
+      <model-viewer
+        id="visualizador"
+        src="modelos/seio.glb"
+        alt="Modelo 3D da anatomia da mama"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        shadow-intensity="0.6"
+        ar
+        ar-modes="webxr scene-viewer quick-look">
+        <button slot="ar-button" class="botao" type="button">
+          <span data-icone="cubo"></span>
+          Ver no seu espaço
+        </button>
+      </model-viewer>
+      <div>
+        <h2>Modelo de teste</h2>
+        <p class="aviso-3d" id="aviso-3d">Carregando o modelo 3D...</p>
+        <p class="nota">Este é um modelo de anatomia usado para testar a tecnologia. O modelo da pega correta ainda será produzido.</p>
+        <p class="erro-3d" id="erro-3d" hidden>Não foi possível carregar o modelo 3D. Verifique a conexão e tente de novo.</p>
+        <p class="creditos">
+          Modelo "Human Female Breast Anatomy", de Doctor Jana, licença
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+          Fonte:
+          <a href="https://sketchfab.com/3d-models/human-female-breast-anatomy-e521ddef44924d67a612d41764779505" target="_blank" rel="noopener">Sketchfab</a>.
+          O modelo foi redimensionado e teve as texturas reduzidas.
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer class="rodape-aviso" data-aviso></footer>
+  <script type="module" src="js/model-viewer.min.js"></script>
+</body>
+</html>
